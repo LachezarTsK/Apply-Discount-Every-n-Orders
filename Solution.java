@@ -5,13 +5,13 @@ public class Cashier {
 
     private final int[] productID_toPrice;
     private final int nthCustomerEligibleForDiscount;
-    private final double discountedPriceFruction;
+    private final double discountedPriceFraction;
 
     private int countCustomers;
 
     public Cashier(int n, int discount, int[] products, int[] prices) {
         nthCustomerEligibleForDiscount = n;
-        this.discountedPriceFruction = (double) (100 - discount) / 100;
+        this.discountedPriceFraction = (double) (100 - discount) / 100;
         productID_toPrice = new int[RANGE_OF_PRODUCT_ID[1] + 1];
 
         for (int i = 0; i < products.length; ++i) {
@@ -29,7 +29,7 @@ public class Cashier {
         }
 
         if (countCustomers % nthCustomerEligibleForDiscount == 0) {
-            totalPrice *= discountedPriceFruction;
+            totalPrice *= discountedPriceFraction;
         }
 
         return totalPrice;
