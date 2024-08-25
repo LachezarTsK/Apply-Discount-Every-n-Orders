@@ -8,7 +8,7 @@ class Cashier {
     private discountedPriceFraction: number;
     private countCustomers: number;
 
-    constructor(n, discount, products, prices) {
+    constructor(n: number, discount: number, products: number[], prices: number[]) {
         this.nthCustomerEligibleForDiscount = n;
         this.discountedPriceFraction = (100 - discount) / 100;
         this.productID_toPrice = new Array(Cashier.RANGE_OF_PRODUCT_ID[1] + 1);
@@ -19,7 +19,7 @@ class Cashier {
         }
     }
 
-    getBill(product, amount) {
+    getBill(product: number[], amount: number[]): number {
         ++this.countCustomers;
         let totalPrice = 0;
 
